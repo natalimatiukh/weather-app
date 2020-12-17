@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Погода</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="/stylesheet/style.css">-->
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="list-group">
+                {{#each cities}}
+                    <a class="list-group-item" href="/?city={{this.name_en}}">{{this.name_ua}}</a>
+                {{/each}}
+
+                <a class="list-group-item" href="/admin">ADMIN</a>
+            </div>
+        </div>
+        <div class="col-12 col-lg-9">
+            <h3>Погода в {{city}}</h3>
+
+            <table>
+                <tr>
+                    <td>Температура</td>
+                    <td>{{weather.main.temp}}</td>
+                </tr>
+                <tr>
+                    <td>Опис</td>
+                    <td>{{weather.weather.0.main}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
